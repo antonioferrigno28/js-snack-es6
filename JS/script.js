@@ -55,11 +55,6 @@ function printLighterBike() {
 printLighterBike();
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Creare un array di oggetti di squadre di calcio.
-// Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-// Nome sarà l'unica proprietà da compilare, le altre saranno tutte settate a 0.
-// Generare numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli subiti".
-// Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
 //ELABORAZIONE SNACK 2
 // Array di oggetti di squadre di calcio.
@@ -125,3 +120,30 @@ function printTeams() {
 //Chiamata funzioni
 randomizePoints();
 printTeams();
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Snack 3 (Bonus)
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra gli indici dei due numeri.
+
+//ELABORAZIONE SNACK BONUS
+
+//Funzione che accetta tre argomenti, un array e due numeri (a più piccolo di b)
+function printArray(array, a, b) {
+  //Dichiara un array vuoto
+  let newArray = [];
+  //Per i che parte da 0 a array.length, incrementa i
+  for (let i = 0; i < array.length; i++) {
+    //SE i è maggiore del valore a e minore del valore b
+    if (i > a && i < b) {
+      //Pusha i valori in newArray (array nuovo)
+      newArray.push(array[i]);
+    }
+  }
+  //Stampa l'array
+  console.log(newArray);
+}
+
+//Chiamata funzione
+printArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3, 7);
