@@ -53,3 +53,75 @@ function printLighterBike() {
 }
 
 printLighterBike();
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Creare un array di oggetti di squadre di calcio.
+// Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+// Nome sarà l'unica proprietà da compilare, le altre saranno tutte settate a 0.
+// Generare numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli subiti".
+// Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+//ELABORAZIONE SNACK 2
+// Array di oggetti di squadre di calcio.
+const teams = [
+  {
+    name: "Pergolettese",
+    points: 0,
+    faults: 0,
+  },
+  {
+    name: "Carrarese",
+    points: 0,
+    faults: 0,
+  },
+  {
+    name: "Albinoleffe",
+    points: 0,
+    faults: 0,
+  },
+  {
+    name: "Ternana",
+    points: 0,
+    faults: 0,
+  },
+];
+
+//Visualizza gli oggetti con i punti fatti e falli subiti
+console.log(teams);
+
+//Genera numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli subiti".
+function randomizePoints() {
+  //PER i che parte da 0 a teams.length, incrementa i
+  for (let i = 0; i < teams.length; i++) {
+    //Genera numeri random
+    let randomPoints = Math.floor(Math.random() * 30);
+    let randomFaults = Math.floor(Math.random() * 30);
+    //Assegna i valori random ai punti e ai falli
+    teams[i].points = randomPoints;
+    teams[i].faults = randomFaults;
+  }
+}
+
+//Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+function printTeams() {
+  //Dichiara un array vuoto
+  let teamsArray = [];
+  //PER i che parte da 0 a teams.length, incrementa i
+  for (let i = 0; i < teams.length; i++) {
+    //Creazione di un nuovo oggetto
+    let team = {
+      //prende il valore del nome e dei falli dell'oggetto iterato in quel momento
+      name: teams[i].name,
+      faults: teams[i].faults,
+    };
+
+    //Pusha i valori in teamsArray (array nuovo)
+    teamsArray.push(team);
+  }
+  //Stampa l'array
+  console.log(teamsArray);
+}
+
+//Chiamata funzioni
+randomizePoints();
+printTeams();
