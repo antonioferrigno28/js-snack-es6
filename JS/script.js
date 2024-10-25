@@ -19,3 +19,37 @@
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//ELABORAZIONE SNACK 1
+
+const bikes = [
+  {
+    name: "Mountain Bike",
+    weight: 20,
+  },
+  {
+    name: "Road Bike",
+    weight: 15,
+  },
+  {
+    name: "Hybrid Bike",
+    weight: 10,
+  },
+  {
+    name: "E-Bike",
+    weight: 30,
+  },
+];
+
+//Stampa a schermo la bici con peso minore
+function printLighterBike() {
+  let lighterBike = bikes[0];
+  for (let i = 0; i < bikes.length; i++) {
+    if (bikes[i].weight < lighterBike.weight) {
+      lighterBike = bikes[i];
+    }
+  }
+  console.log(lighterBike);
+}
+
+printLighterBike();
